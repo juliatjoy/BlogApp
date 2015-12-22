@@ -1,23 +1,4 @@
-<body>
-	 <div class="container">
-	 	<% @posts.each do |post| %>
-	 	<div class="row">
-	 		<div class="col-md-8 col-md-offset-2">
-	 			<div class="post_title">
-	 				<h1>
-	 					<%= post.title %>
-	 				</h1>
-	 			</div>
-        	</div>
-        </div>
-        <div class="row">
-        	<div class="col-md-12">
-        		<p>
-        			<%= post.body %>
-        		</p>
-        	</div>
-
-        </div>
-        <% end %>
-     </div>
-</body>
+<% @posts.each do |post| %>
+	<%= render partial: 'post', locals: {post: post} %>
+	<hr/>
+<% end %>
